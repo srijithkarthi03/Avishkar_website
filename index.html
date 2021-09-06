@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Registration Page</title>
+</head>
+<body>
+    <div id = "leftbox">
+        <br><br><br><br><br><br><br><br><br>
+        <img src="hyperloop.png" alt="not loaded">
+    </div>
+    <div id = "rightbox">
+        <br>
+        <h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;size: 20px;">REGISTRATION</h1>
+        <form action="submit.html" name="registration" onSubmit="return confirmpassword(); ">
+            <ul style="list-style-type:none; text-align: left;">
+                <li><label for="userid">User Id:</label></li>
+                <br>
+                <li><input required type="text" name="userid" maxlength="12" minlength="8" placeholder="8 to 12 characters" size="30"/></li>
+                <br><br>
+                <li><label for="passid">Password:</label></li>
+                <br>
+                <li><input required type="password" name="passid" id="passid" minlength="6" placeholder="Password" size="30"/></li>
+                <br>
+                <li><label for="passid2">Confirm&nbsp;Password:</label></li>
+                <br>
+                <li><input required type="password" name="passid2" id="passid2" minlength="6" placeholder="Confirm password" size="30"/></li>
+                <br><br>
+                <li><label for="email">Email Id:</label></li>
+                <br>
+                <li><input required type="text" name="email" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Address" title="abc@example.com" size="30"/></li>
+                <br><br>
+                <li><input type="submit" class="button" name="submit" value="SUBMIT" /></li>
+            </ul>
+
+        </form>
+    </div>
+
+    <script>
+        function confirmpassword()
+         {
+            var pwd = document.getElementById("passid").value;
+            var cpwd = document.getElementById("passid2").value;
+            if(cpwd==pwd)
+            {
+               return true;
+            }
+            else
+            {
+               alert("Password does not match");
+               return false;
+            }
+         }
+
+
+    </script>
+   
+</body>
+</html>
